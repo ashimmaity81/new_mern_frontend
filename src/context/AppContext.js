@@ -1,6 +1,7 @@
-import { createContext } from "react";
+import { createContext, useContext } from "react";
 
-const AppContext = createContext({
-  name: "Ashim",
-  count: 0,
-});
+const MyContext = createContext();
+const useMyContext = () => {
+  return useContext(MyContext);
+};
+export { MyContext, useMyContext };

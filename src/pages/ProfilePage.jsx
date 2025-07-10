@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Navbar } from "../components/Navbar";
+import { useMyContext } from "../context/AppContext";
 const ProfilePage = () => {
+  const {setCount} = useMyContext();
   const [products, setProducts] = useState([]);
   const [editProductId, setEditProductId] = useState("");
   const [updatedPrice, seUpdatedPrice] = useState(-1);
@@ -169,6 +171,14 @@ const ProfilePage = () => {
                 className="py-0.5 px-2 border-1 rounded-md"
               >
                 Edit
+              </button>
+              <button
+                onClick={() => {
+                  setCount((prev)=>prev+1)
+                }}
+                className="py-0.5 px-2 border-1 rounded-md"
+              >
+                ++
               </button>
             </div>
           );
